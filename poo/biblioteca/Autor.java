@@ -5,25 +5,14 @@ public class Autor{
     private String apellido1;
     private String apellido2;
     private String email;
-    private int generarId() {
-        int id = (int) (Math.random() * 1000); 
-        return id; 
-    }
-    
-    Autor.generarId(); 
-
-    public void main(String[] args) {
-        
-    }
     // Constructor
-    public Autor(int id, String nombre1, String apellido1, String apellido2, String email) {
+    public Autor(String nombre1, String apellido1, String apellido2, String email) {
         this.nombre1 = nombre1;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
-        this.id = generarId();
+        this.id =(int) (Math.random() * 1000); 
         this.email =email;
     }
-    
     // Métodos getter y setter
     public String getNombre1() {
         return nombre1;
@@ -57,8 +46,10 @@ public class Autor{
     public void setEmail(String email) {
         this.email = email;
     }
-
-    
+    public void main(String[] args) {
+    Autor autor = new Autor("Juan", "Perez", "Martinez", "juan.perez@example.com");
+    System.out.println("Autor: " + autor.getNombre1() + " " + autor.getApellido1() + " (ID: " + autor.id + ")");
+    }
 }
 
 
